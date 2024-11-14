@@ -28,23 +28,23 @@ checkstyle {
     showViolations = true              // Optionally show violations in the console output
 }
 
-task checkstyleMain(type: Checkstyle) {
-    source = sourceSets.main.allSource
-    configFile = file('config/checkstyle/checkstyle.xml') // Path to Checkstyle configuration file
-    reports {
-        xml.enabled = true
-        html.enabled = true
-    }
-}
+// task checkstyleMain(type: Checkstyle) {
+//     source = sourceSets.main.allSource
+//     configFile = file('config/checkstyle/checkstyle.xml') // Path to Checkstyle configuration file
+//     reports {
+//         xml.enabled = true
+//         html.enabled = true
+//     }
+// }
 
-task checkstyleTest(type: Checkstyle) {
-    source = sourceSets.test.allSource
-    configFile = file('config/checkstyle/checkstyle.xml') // Path to Checkstyle configuration file
-    reports {
-        xml.enabled = true
-        html.enabled = true
-    }
-}
+// task checkstyleTest(type: Checkstyle) {
+//     source = sourceSets.test.allSource
+//     configFile = file('config/checkstyle/checkstyle.xml') // Path to Checkstyle configuration file
+//     reports {
+//         xml.enabled = true
+//         html.enabled = true
+//     }
+// }
 
 //pmd
 
