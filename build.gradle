@@ -82,23 +82,23 @@ spotbugs {
     excludeFilter = file('config/spotbugs/exclude.xml') // Optional exclude rules file
 }
 
-task spotbugsMain(type: com.github.spotbugs.SpotBugsTask) {
-    source = sourceSets.main.allSource
-    classes = fileTree('build/classes')
-    reports {
-        xml.enabled = true
-        html.enabled = true
-    }
-}
+// task spotbugsMain(type: com.github.spotbugs.SpotBugsTask) {
+//     source = sourceSets.main.allSource
+//     classes = fileTree('build/classes')
+//     reports {
+//         xml.enabled = true
+//         html.enabled = true
+//     }
+// }
 
-task spotbugsTest(type: com.github.spotbugs.SpotBugsTask) {
-    source = sourceSets.test.allSource
-    classes = fileTree('build/classes')
-    reports {
-        xml.enabled = true
-        html.enabled = true
-    }
-}
+// task spotbugsTest(type: com.github.spotbugs.SpotBugsTask) {
+//     source = sourceSets.test.allSource
+//     classes = fileTree('build/classes')
+//     reports {
+//         xml.enabled = true
+//         html.enabled = true
+//     }
+// }
 
 
 
