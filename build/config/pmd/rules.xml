@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset xmlns="http://pmd.sourceforge.net/ruleset/1.0.0"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/1.0.0 http://pmd.sourceforge.net/ruleset_1_0_0.xsd"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <rule ref="category/java/design.xml/AbstractClassWithoutAbstractMethod" />
+    <rule ref="category/java/basic.xml/AvoidComplexMethod" />
+</ruleset>
