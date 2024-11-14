@@ -48,24 +48,30 @@ checkstyle {
 
 //pmd
 
+
 pmd {
-    toolVersion = '6.38.0'               // Adjust PMD version as needed
-    ruleSets = ['java-basic', 'java-design'] // Default PMD rules
-    // You can also specify custom rule sets:
-     ruleSets = ['config/pmd/custom-rules.xml']
+    toolVersion = '6.38.0'
+    ruleSets = ['config/pmd/rules.xml']  // Path to your custom PMD rules
 }
 
-task pmdMain(type: Pmd) {
-    source = sourceSets.main.allSource
-    ruleSets = ['java-basic', 'java-design']
-	ruleSets = ['config/pmd/custom-rules.xml']
-}
+// pmd {
+//     toolVersion = '6.38.0'               // Adjust PMD version as needed
+//     ruleSets = ['java-basic', 'java-design'] // Default PMD rules
+//     // You can also specify custom rule sets:
+//      ruleSets = ['config/pmd/custom-rules.xml']
+// }
 
-task pmdTest(type: Pmd) {
-    source = sourceSets.test.allSource
-    ruleSets = ['java-basic', 'java-design']
-	ruleSets = ['config/pmd/custom-rules.xml']
-}
+// task pmdMain(type: Pmd) {
+//     source = sourceSets.main.allSource
+//     ruleSets = ['java-basic', 'java-design']
+// 	ruleSets = ['config/pmd/custom-rules.xml']
+// }
+
+// task pmdTest(type: Pmd) {
+//     source = sourceSets.test.allSource
+//     ruleSets = ['java-basic', 'java-design']
+// 	ruleSets = ['config/pmd/custom-rules.xml']
+// }
 
 //spotbugs
 
