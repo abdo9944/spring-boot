@@ -25,7 +25,7 @@ dependencies {
 
 checkstyle {
     toolVersion = '10.9.3'
-    config = rootProject.resources.text.fromFile('~/config/checkstyle/checkstyle.xml')
+    config = rootProject.resources.text.fromFile('/config/checkstyle/checkstyle.xml')
 }
 
 tasks.withType(Checkstyle).configureEach {
