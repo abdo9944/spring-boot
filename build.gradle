@@ -3,8 +3,7 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 	id 'java'
 	id 'checkstyle'              // Checkstyle plugin
-        id 'pmd'                     // PMD plugin
-        id 'com.github.spotbugs' version '4.7.1'  // SpotBugs plugin
+        
 }
 
 group = 'com.example'
@@ -22,83 +21,19 @@ dependencies {
 
 //checkout
 
+
+
 checkstyle {
-    toolVersion = '9.2'                // Specify the version of Checkstyle you want to use
-    configFile = file('config/checkstyle/checkstyle.xml') // Path to your Checkstyle configuration file
-    showViolations = true              // Optionally show violations in the console output
+    toolVersion = '10.9.3'
+    config = rootProject.resources.text.fromFile('config/checkstyle/checkstyle.xml')
 }
 
-// task checkstyleMain(type: Checkstyle) {
-//     source = sourceSets.main.allSource
-//     configFile = file('config/checkstyle/checkstyle.xml') // Path to Checkstyle configuration file
-//     reports {
-//         xml.enabled = true
-//         html.enabled = true
-//     }
-// }
-
-// task checkstyleTest(type: Checkstyle) {
-//     source = sourceSets.test.allSource
-//     configFile = file('config/checkstyle/checkstyle.xml') // Path to Checkstyle configuration file
-//     reports {
-//         xml.enabled = true
-//         html.enabled = true
-//     }
-// }
-
-//pmd
-
-
-pmd {
-    toolVersion = '6.38.0'
-    ruleSets = ['config/pmd/rules.xml']  // Path to your custom PMD rules
+tasks.withType(Checkstyle).configureEach {
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+    }
 }
-
-// pmd {
-//     toolVersion = '6.38.0'               // Adjust PMD version as needed
-//     ruleSets = ['java-basic', 'java-design'] // Default PMD rules
-//     // You can also specify custom rule sets:
-//      ruleSets = ['config/pmd/custom-rules.xml']
-// }
-
-// task pmdMain(type: Pmd) {
-//     source = sourceSets.main.allSource
-//     ruleSets = ['java-basic', 'java-design']
-// 	ruleSets = ['config/pmd/custom-rules.xml']
-// }
-
-// task pmdTest(type: Pmd) {
-//     source = sourceSets.test.allSource
-//     ruleSets = ['java-basic', 'java-design']
-// 	ruleSets = ['config/pmd/custom-rules.xml']
-// }
-
-//spotbugs
-
-spotbugs {
-    toolVersion = '4.2.3'             // SpotBugs version (adjust as needed)
-    effort = 'max'                    // Effort level: 'min', 'default', or 'max'
-    reportLevel = 'high'              // Report level: 'low', 'medium', or 'high'
-    excludeFilter = file('config/spotbugs/exclude.xml') // Optional exclude rules file
-}
-
-// task spotbugsMain(type: com.github.spotbugs.SpotBugsTask) {
-//     source = sourceSets.main.allSource
-//     classes = fileTree('build/classes')
-//     reports {
-//         xml.enabled = true
-//         html.enabled = true
-//     }
-// }
-
-// task spotbugsTest(type: com.github.spotbugs.SpotBugsTask) {
-//     source = sourceSets.test.allSource
-//     classes = fileTree('build/classes')
-//     reports {
-//         xml.enabled = true
-//         html.enabled = true
-//     }
-// }
 
 
 
