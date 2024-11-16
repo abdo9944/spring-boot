@@ -25,10 +25,10 @@ dependencies {
 
 checkstyle {
     toolVersion = '10.9.3'
-    config = rootProject.resources.text.fromFile('config/checkstyle/checkstyle.xml')
+    config = rootProject.resources.text.fromFile('~/config/checkstyle/checkstyle.xml')
 }
 
-tasks.withType(Checkstyle).configureEach {
+tasks.withType(checkstyle).configureEach {
     reports {
         xml.required.set(true)
         html.required.set(true)
