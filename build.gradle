@@ -28,7 +28,7 @@ checkstyle {
     config = rootProject.resources.text.fromFile('~/config/checkstyle/checkstyle.xml')
 }
 
-tasks.withType(checkstyle).configureEach {
+tasks.withType(Checkstyle).configureEach {
     reports {
         xml.required.set(true)
         html.required.set(true)
